@@ -316,25 +316,29 @@ function searchLetter (){
 }
 console.log(searchLetter(characterNames, `a`));
 // ----------------------------------------------------------------------
-
+Exo 7 "Somme" Ecrivez un code qui demande à l'utilisateur de saisir 
 let userNumber = parseInt(prompt`Veuillez saisir un nombre`);
 
 console.log(userNumber);
 let somme = 0;
-i=1;
+i += 1;
 while (1 <= userNumber){
   somme = userNumber +i; i= i + 1;
 }
-console.log(somme);
+
 */
 
 let userNumber = parseInt(prompt`Veuillez saisir un nombre`);
-console.log(userNumber);
-let operateur = " + ";
-let somme =(userNumber);
- 
-for (i =0; i <= userNumber ; i = i +1){
-console.log(`1 + ${i} = ${userNumber} `);
+
+let somme = 0;
+let calcul = "";
+
+for (let i = 1; i <= userNumber; i++) {
+  somme += 1;
+  if (i != userNumber) {
+    calcul += i + "+";
+  } else {
+    calcul += i + "=";
+  }
 }
-
-
+console.log(calcul + somme);

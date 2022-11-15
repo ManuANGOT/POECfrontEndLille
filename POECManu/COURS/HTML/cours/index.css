@@ -1,0 +1,20 @@
+header{
+    border-bottom: solid 2 px;
+  
+}
+
+footer{
+    border-top: solid 2 px;
+    border-bottom: solid 2 px;
+    
+}
+
+
+h1{
+    color:blue;
+}
+
+.container{
+    
+    border: solid 2 px red;
+}
