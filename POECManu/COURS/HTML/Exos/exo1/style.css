@@ -1,9 +1,16 @@
-header {
-  text-align: center;
+body{
+    width: 100vh;
+    min-height: 100 vh;
+}
 
+header, footer {
+  text-align: center;
+  display :flex;
+  justify-content: center;
   background-color: grey;
   justify-items: center;
   height: 15 vh;
+  
   margin: 20;
   padding: 0;
 }
@@ -12,7 +19,7 @@ header {
   display: flex;
 }
 
-aside {
+nav {
   text-align: center;
   background-color: grey;
   border: solid 2 px red;
@@ -135,11 +142,4 @@ section.section2 {
   height: 35vh;
   margin: 10px;
   padding: 0;
-}
-
-footer {
-  text-align: center;
-  background-color: grey;
-  justify-items: center;
-  height: 15 vh;
 }
