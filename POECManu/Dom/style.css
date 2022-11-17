@@ -1,0 +1,23 @@
+header, footer{
+    align-items: center;
+    text-align: center;
+    background-color: dimgrey;
+    height: 100 vw;
+    padding: 15 vh;
+    
+}
+
+main{
+    display: flex;
+    width: 100 px;
+    height: 70 px;
+}
+
+.titre1{
+    background-color: rgb(205, 163, 85);
+}
+
+
+.p{
+    color : solid red;
+}
