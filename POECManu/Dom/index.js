@@ -124,16 +124,43 @@ function changeColor(){
 }
 setInterval(changeColor, 1000);
 changeColor();
-****************************************
-*/
+
 const h1 = document.querySelector("h1");
 //h1.addEventListener("click", (Event) => {
- //h1.style.color = "green";
+//h1.style.color = "green";
 //});
 h1.addEventListener("mouseover", (Event) => {
-h1.style.color = "green";
+  h1.style.color = "green";
 });
 h1.addEventListener("mouseout", (Event) => {
   h1.style.color = "red";
   h1.style.backgroundColor = "yellow";
 });
+****************************************
+*/
+//Compteur
+const button = document.querySelector(`button`);
+button.addEventListener(`click`, (Event) => {
+  button.innerHTML = `Nombre de click : ${Event.detail}`;
+});
+
+//Autre méthode :
+let compte = true;
+
+let pCompteur = document.querySeclector(`p`);
+let button2 = document.querySeclector(`button2`);
+button2.addEventListener("click", (event) => {
+  compte = !compte;
+  pCompteur.innerHTML = compte;
+})
+
+let div = document.querySelector("div");
+let compteur3 = document.createElement("button3");
+div.prepend(button3);
+button3.innerText = "+1";
+let compte2 = 0;
+button3.addEventListener("click", (event) =>{
+  compte2 ++;
+  compteur3.innerHTML = compte2;
+});
+

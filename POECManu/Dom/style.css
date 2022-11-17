@@ -1,23 +1,37 @@
-header, footer{
-    align-items: center;
+header,
+footer {
+  align-items: center;
+  text-align: center;
+  background-color: dimgrey;
+  height: 100 vw;
+  padding: 15 vh;
+}
+
+body {
+  height: 100 vh;
+  width: 100 vw;
+}
+
+main {
+  display: flex;
+  width: 100 px;
+  height: 70 px;
+}
+
+
+.titre1 {
+  background-color: rgb(205, 163, 85);
+}
+
+
+button{
     text-align: center;
-    background-color: dimgrey;
-    height: 100 vw;
-    padding: 15 vh;
-    
+    justify-items: right;
+    display : flex;
+    color: red;
+
 }
 
-main{
-    display: flex;
-    width: 100 px;
-    height: 70 px;
-}
-
-.titre1{
-    background-color: rgb(205, 163, 85);
-}
-
-
-.p{
-    color : solid red;
+.p {
+  color: red;
 }
