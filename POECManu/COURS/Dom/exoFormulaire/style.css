@@ -1,0 +1,15 @@
+h2 {
+    color : red;
+}
+
+
+}
+
+.container {
+    width: fit-content;
+}
+
+.container form {
+    display:flex;
+    flex-direction: column;
+}

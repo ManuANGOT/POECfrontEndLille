@@ -1,21 +1,26 @@
-header,
-footer {
+header {
   align-items: center;
   text-align: center;
   background-color: dimgrey;
   height: 100 vw;
   padding: 15 vh;
+  flex-wrap: wrap;
 }
 
 body {
   height: 100 vh;
   width: 100 vw;
+  display : flex;
+  justify-content: space-between;
 }
 
 main {
   display: flex;
   width: 100 px;
-  height: 70 px;
+  height: 100 px;
+  display : flex;
+  justify-content: space-between;
+}
 }
 
 

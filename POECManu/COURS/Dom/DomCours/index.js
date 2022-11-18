@@ -138,12 +138,13 @@ h1.addEventListener("mouseout", (Event) => {
 });
 ****************************************
 */
-//Compteur
+Compteur;
 const button = document.querySelector(`button`);
 button.addEventListener(`click`, (Event) => {
   button.innerHTML = `Nombre de click : ${Event.detail}`;
 });
 
+/*
 //Autre méthode :
 let compte = true;
 
@@ -163,4 +164,50 @@ button3.addEventListener("click", (event) =>{
   compte2 ++;
   compteur3.innerHTML = compte2;
 });
+****************************************
+****** Propagation d'événement ********
+****************************************
+*/
+//Déclaration des variables
+let compteurParent = 0;
+let compteurEnfant = 0;
 
+//Récupération des éléments
+const divParent = document.querySelector("#parent");
+const boutonEnfant = document.querySelector("#enfant");
+const body = document.querySelector("body");
+
+//Récupération des éléments pour afficher les compteurs
+const spanParentCompteur = document.querySelector("#parent-Compteur");
+const spanEnfantCompteur = document.querySelector("#enfant-Compteur");
+
+//Event pour écouter le click Parent-Compteur
+divParent.addEventListener("click", (event) => {
+  compteurParent++;
+  spanParentCompteur.innerHTML = compteurParent;
+});
+
+//Event pour écouter le click Enfant-Compteur
+boutonEnfant.addEventListener("click", (event) => {
+  event.stopPropagation();
+  compteurEnfant++;
+  spanEnfantCompteur.innerHTML = compteurEnfant;
+});
+/*
+ ****************************************
+ ************ Les formulaires ***********
+ ****************************************
+ */
+let input = document.querySelector("input");
+input.addEventListener("change", (event) => {
+  let valeur = event.target.value;
+  console.log(valeur);
+});
+
+let select = document.querySelector("#mySelect");
+let result = document.createElement("p");
+select.addEventListener("change", (event) => {
+  let valeurSelect = event.target.value;
+  result.innerHTML = `Vous aimez le ${valeurSelect}`;
+  body.append("p");
+});
