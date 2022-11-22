@@ -51,4 +51,23 @@ git reset "codeCommit" va conserver les autres fichiers
 git add .\test.js
 git commit -m "feat(test) : mise en place du test 45"
 
+************************************
+Tags.
+Le tag n'est pas un commit mais il est attaché à un commit.
+git tag "je choisis le tag, ici, par exemple 0.5.0" => si pas de params de commit, va se rattacher au dernier commit effectué
+
+
+supprimer tag :
+git tag -d 0.5.0
+
+pour aller le chercher
+git checkout tags/0.5.0 -b hotfix/0.5.1 
+git branch => va  recréer une nouvelle branche
+git checkout master
+git branch
+
+TDD Test Driven Development
+
+Cf GitFlow
+
 */
