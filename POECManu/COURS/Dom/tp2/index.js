@@ -51,8 +51,8 @@ div6.innerHTML=`<div class="div6view href="./index2.html">Liste des Exercices
 
 const div8=document.createElement("div8Horloge");
 
-const div9=document.createElement("div9number");
 
+const div9=document.createElement("div9number");
 function fizzbuzz(number){
   for (let i = number; i<=100; i++){
 
@@ -70,7 +70,7 @@ function fizzbuzz(number){
         }
     }
 }
-
 fizzbuzz(number);
+
 
 
