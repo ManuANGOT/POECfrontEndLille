@@ -70,4 +70,6 @@ TDD Test Driven Development
 
 Cf GitFlow
 
+Rebase : déplacer le head pour transformer le dernier commit  en master.
+
 */
