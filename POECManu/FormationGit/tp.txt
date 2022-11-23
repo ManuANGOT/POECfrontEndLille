@@ -1,0 +1,9 @@
+Créer un nouveau projet
+Dans le projet créer une branche DEV
+sur la branche Dev, créer un fichier et insérer 4 lignes.
+Mettre en pause les modifs pour revenir sur la Master.
+Créer fichier du même nom que le dev et insérer 4 lignes.
+Sauvegarder vos changements.
+Revenir sur la Dev et sauvegarder votre travail.
+sauvegarder vos changements/
+Revenir sur Master et faire un merge de la dev.
