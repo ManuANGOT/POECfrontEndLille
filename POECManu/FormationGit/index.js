@@ -44,13 +44,17 @@ IB@DESKTOP-6IM55F2 MINGW64 ~/Documents/Formation (master)
 $ git branch -d Mabranche2
 Deleted branch Mabranche2 (was c1bde1e).
 
-git commit -am ""    permet de tout commiter en une ligne
+git commit -am ""    permet de tout commiter en une ligne (sans git add .)
 git reset --hard "codeCommit" ATTENTION !!! permet de revenir au commit initial... il supprime tout !!! et pas réversible.
 git reset "codeCommit" va conserver les autres fichiers
 
 git add .\test.js
 git commit -m "feat(test) : mise en place du test 45"
 
+***************************************
+git stash
+git stash apply {index}
+git stash -drop {index}      supprime le stash
 ************************************
 Tags.
 Le tag n'est pas un commit mais il est attaché à un commit.
@@ -70,6 +74,26 @@ TDD Test Driven Development
 
 Cf GitFlow
 
-Rebase : déplacer le head pour transformer le dernier commit  en master.
+Rebase : déplacer le head pour transformer le dernier commit en master.
 
+Renommer une branche : (revenir sur la branche  avant)
+git branch -M newBranchName
+
+****************************************
+à chaque création d'un dépôt local :
+git push --set-upstream origin dev
+git push -u origin dev   =====> ici, dev est le nom de la nouvelle branche
+
+En local voir toutes les branches :
+(après le git pull, pour mise à jour)
+git branch -a
+
+pour basculer sur autre branche : 
+git branch nomDeAutreBranche
+
+Dans Git : ajouter des collaborateurs
+Dans repository du GitHub, dans le "setting" du repository : collaborator
+
+
+utilisation des pull requests, directement dans GitHub, pour annoncer des pull à faire et réaliser les merge (valider par chef de projet)
 */
