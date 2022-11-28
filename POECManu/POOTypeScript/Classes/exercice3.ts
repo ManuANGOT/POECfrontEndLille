@@ -1,54 +1,43 @@
-class Chat {
-  private _nom: string;
-  private _age: number;
-  private _poids: number;
-  private _race: string;
+/**
+ * Des mignons petit chatons trop kawaii UwU
+ */
+ class Chat {
+  private _nom!: string;
+  private _race!: string;
+  private _age!: number;
+  private _poids!: number;
 
-  constructor(nom: string, age: number, poids: number, race: string) {
-    this._nom = nom;
-    this._age = age;
-    this._poids = poids;
-    this._race = race;
+  constructor(nom: string, race: string, age: number, poids: number) {
+      this.nom = nom;
+      this.race = race;
+      this.age = age;
+      this.poids = poids;
   }
 
-  public get nom(): string {
-    return this._nom;
-  }
-  public get age(): number {
-    return this._age;
-  }
-  public get poids(): number {
-    return this._poids;
-  }
-  public get race(): string {
-    return this._race;
-  }
-}
-/** 
-  public set nom(nouveauNom: string) {
-    return (this._nom = nouveauNom);
-  }
-  public set age(nouvelAge: number) {
-    return (this._age = nouvelAge);
-  }
-  public set poids(nouveauPoids: number) {
-    return (this._poids = nouveauPoids);
-  }
-  public set race(nouvelleRace: string) {
-    return (this._race = nouvelleRace);
-  }
-}
+  public get nom(): string {return this._nom}
+  public get race(): string {return this._race}
+  public get age(): number {return this._age}
+  public get poids(): number {return this._poids}
 
+  public set nom(nouveauNom: string) { this._nom = nouveauNom}
+  public set race(nouvelleRace: string) { this._race = nouvelleRace}
+  public set age(nouvelAge: number) { this._age = nouvelAge}
+  public set poids(nouveauPoids: number) { this._poids = nouveauPoids}
+
+
+  /**
+   * Permet d'afficher le chat
+   */
   afficherChat(): void {
-      console.log(`Ce chat s'appele ${this.nom} \r\n il est de race ${this.race} \r\n il a ${this.age} \r\n et pése ${this.poids} kilos.
-     `);
-    }
+    console.log(`
+            Mon super chat s'appelle ${this.nom} \r
+            C'est un ${this.race} \r
+            Il a ${this.age} an(s) \r
+            Et il pèse ${this.poids} kg ! 
+        `);
   }
-  
-  const Chat1: Chat = new Chat();
-  Chat1.nom = "Apreupré";
-  Chat1.age = 3;
-  Chat1.poids = 5;
-  
-  Chat1.afficherChat();
-  */
+}
+
+const monChat: Chat = new Chat("Bébou 3", "Clochard", 1, 10);
+
+monChat.afficherChat();
