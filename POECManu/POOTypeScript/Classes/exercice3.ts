@@ -11,30 +11,35 @@ class Chat {
     this._race = race;
   }
 
-  get nom() : string{
-    return this._nom
+  public get nom(): string {
+    return this._nom;
   }
-  get age() : number{
-    return this._age
+  public get age(): number {
+    return this._age;
   }
-  get poids() : number{
-    return this._poids
+  public get poids(): number {
+    return this._poids;
   }
-  get race() : string{
-    return this._race
+  public get race(): string {
+    return this._race;
   }
-
-  set nom (nouveauNom: string){
-    if(nouveauNom.length>1){
-        this._nom = nouveauNom;
-    }
-    else {
-        throw new Error(`Incorrect`);
-    }
+}
+/** 
+  public set nom(nouveauNom: string) {
+    return (this._nom = nouveauNom);
+  }
+  public set age(nouvelAge: number) {
+    return (this._age = nouvelAge);
+  }
+  public set poids(nouveauPoids: number) {
+    return (this._poids = nouveauPoids);
+  }
+  public set race(nouvelleRace: string) {
+    return (this._race = nouvelleRace);
   }
 }
 
-/**   afficherChat(): void {
+  afficherChat(): void {
       console.log(`Ce chat s'appele ${this.nom} \r\n il est de race ${this.race} \r\n il a ${this.age} \r\n et pése ${this.poids} kilos.
      `);
     }
@@ -45,4 +50,5 @@ class Chat {
   Chat1.age = 3;
   Chat1.poids = 5;
   
-  Chat1.afficherChat();*/
+  Chat1.afficherChat();
+  */
