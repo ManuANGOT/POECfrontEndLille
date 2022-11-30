@@ -1,6 +1,6 @@
-import { MilieuNaturel } from "./MilieuNaturel"; 
+import MilieuNaturel from './MilieuNaturel';
 
-export interface Terrestre extends MilieuNaturel {
-    respirerHorsEau(): void;
-    marcher(): void;
+export default interface Terrestre extends MilieuNaturel {
+  respirerHorsDeLeau(): void;
+  marcher(): void;
 }

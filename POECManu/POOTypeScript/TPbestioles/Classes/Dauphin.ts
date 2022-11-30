@@ -1,23 +1,29 @@
-import Animal from "../Interfaces/Animal";
-import { Aquatique } from "../Interfaces/Aquatique";
+import Aquatique from '../Interfaces/Aquatique';
+import Mammifere from './Mammifere';
 
-class Dauphin implements Animal {
-  nom: string;
-  poids: number;
-  dateDeNaissance: Date;
-  miauler: string;
-
-  constructor(nom: string, poids: number, dateDeNaissance: Date) {
-    this.nom = nom;
-    this.poids = poids;
-    this.dateDeNaissance = dateDeNaissance;
-    this.miauler = this.miauler;
+export default class Dauphin extends Mammifere implements Aquatique {
+  constructor(nom: string, poids: number, dateNaissance: Date) {
+    super(nom, poids, dateNaissance);
   }
-  vivre(): string {
-    return `Je suis un Dauphin, je m'appelle ${this.nom}, je pése ${this.poids} kilos et je suis né(e), le ${this.dateDeNaissance}`;
-  }
-  nager () : string {
-    return `Super, j'ai des nageoires, je nage !!!`;
-  }}
 
-export default Dauphin;
+  display(): void {
+    console.log(
+      `Le Dauphin ${this._nom} a ${this._dateNaissance} an(s) et pèse ${this._poids} kg !`
+    );
+  }
+  retenirRespiration(): void {
+    console.log(`Le Dauphin ${this._nom} retient sa respiration ! `);
+  }
+
+  respirerSousLeau(): void {
+    this.retenirRespiration();
+  }
+
+  nager(): void {
+    console.log(`Le Dauphin ${this._nom} nage !`);
+  }
+
+  cliquetter(): void {
+    console.log(`Le Dauphin ${this._nom} cliquette !`);
+  }
+}

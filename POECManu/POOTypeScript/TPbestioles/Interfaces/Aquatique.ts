@@ -1,8 +1,6 @@
-import { MilieuNaturel } from "./MilieuNaturel";
+import MilieuNaturel from './MilieuNaturel';
 
-export interface Aquatique extends MilieuNaturel {
-    respirerSousEau();
-    nager();
-  }
-  
-
+export default interface Aquatique extends MilieuNaturel {
+  respirerSousLeau(): void;
+  nager(): void;
+}

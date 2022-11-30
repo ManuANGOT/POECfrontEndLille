@@ -1,10 +1,8 @@
-export interface Animal {
-    nom: string;
-    poids: number;
-    dateDeNaissance: Date;
-    vivre() : string;
-  }
+export default interface Animal {
+  _nom: string;
+  _poids: number;
+  _dateNaissance: Date;
 
- 
+  display(): void;
+}
   
-  export default Animal;
