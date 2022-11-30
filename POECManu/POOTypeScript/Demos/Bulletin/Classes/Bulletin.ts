@@ -1,11 +1,13 @@
 import Note from "./Notes";
 
 export default class Bulletin {
-  private _notes: Note[];
+  private _notes: Note[] = [];
+// private _notes: Note[] = [];  Signifie que le bulletin peut retourner un tableau vide.
+
 
   /**
-   * Ajoute une nouvelle note au carner de notes
-   * @param nouvelleNote Note à ajouter
+   * Ajoute une nouvelle note au carnet de notes
+   * @param nouvelleNote La nouvelle note à ajouter au tableau de notes
    */
   public ajouterNote(nouvelleNote: Note) {
     if (nouvelleNote.valeur > 20 || nouvelleNote.valeur < 0) {
