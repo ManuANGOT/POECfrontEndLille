@@ -96,4 +96,7 @@ Dans repository du GitHub, dans le "setting" du repository : collaborator
 
 
 utilisation des pull requests, directement dans GitHub, pour annoncer des pull à faire et réaliser les merge (valider par chef de projet)
+
+git commit - m "message" -m "suite avec détails"   ==> permet de faire un titre de commit qui s'affichera dans GitHun et de rajouter des détails techniques plus détaillés.
+
 */
