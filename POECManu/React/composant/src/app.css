@@ -1,0 +1,18 @@
+h1 {
+  font-size: large;
+  margin: auto;
+}
+
+h2 {
+  font-size: medium;
+  margin: auto;
+}
+
+.contact {
+    border : 1px solid black;
+}
+
+button{
+    background-color: red;
+    border : 1 px solid black
+}
