@@ -1,4 +1,4 @@
-## type d'écriture
+cd .## type d'écriture
 
 Camel Case : maFonctionADeclarer
 Pascal Case: MaFonctionADeclarer
