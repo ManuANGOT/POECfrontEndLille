@@ -1,18 +1,33 @@
-h1 {
+h1 {color: red;
+    text-align: center;
   font-size: large;
-  margin: auto;
+  margin : auto;
 }
 
-h2 {
+h2 { text-align: center;
   font-size: medium;
   margin: auto;
 }
+h3 { text-align: center;
+    font-size: medium;
+    margin: auto;
+  }
 
 .contact {
     border : 1px solid black;
 }
 
 button{
+    color : white;
+    text-align: center;
     background-color: red;
     border : 1 px solid black
+}
+
+.para{
+    color : green;
+}
+
+.dauphin{
+    color : blue;
 }
