@@ -1,4 +1,4 @@
-export default function Contact({ nom, prenom, email, telephone }) {
+export default function Contact({ nom, prenom, email, telephone, button }) {
   return (
     <>
       <div className="contact">
@@ -10,7 +10,8 @@ export default function Contact({ nom, prenom, email, telephone }) {
           Email : {email} <br />
           Téléphone : {telephone}
         </h3>
-        <button>DELETE</button>
+        {button && <button>DELETE</button>}
+  
       </div>
     </>
   );
