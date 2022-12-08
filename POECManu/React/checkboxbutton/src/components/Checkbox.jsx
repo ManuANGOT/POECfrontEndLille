@@ -1,23 +1,14 @@
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
+import {Link} from "react-router-dom";
 
-export default function Checkbox(props) {
-  const [checkbox, setCheckbox] = useState(<button>ON</button>);
+export default function checkbox() {
+  const [on, setOn]= useState(true);
 
-  const Click = () => setCheckbox(!checkbox);
-
-  if (Click) {
+  const change = ()=> {
+    setOn(!on);
     return (
-      <>
-        <p>{checkbox}</p>
-        <input type="checkbox" />
-      </>
-    );
-  } else if (Click) {
-    return (
-      <>
-        <p>{checkbox}</p>
-        <button>ON</button>
-      </>
+      <input type = "checked" checked ={on} on/>
     );
   }
 }
