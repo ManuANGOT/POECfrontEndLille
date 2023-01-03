@@ -16,9 +16,14 @@ export default class TodoController {
 
     getByID= (req: Request, res:Response): void => {
         const id = req.params.id
-        res.send(this.service.todoByID(+id))
+        const data = this.service.getById1(+id)
+        res.send(data)
     }
 
-
+    deleteById= (req : Request, res:Response):void => {
+        const id =req.params.id
+        const data = this.service.deleteById(-id)
+        res.send(data)
+    }
    
 }

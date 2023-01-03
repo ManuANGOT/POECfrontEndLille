@@ -12,15 +12,28 @@ export default class TodoService {
     return this.repo.getAll();
   };
 
-  todoByID(id: number) {
-    let result;
-    this.repo.getAll().forEach(function (todos) {
-      console.log(todos);
-      if (todos.id == id) {
-        result = todos;
-      }
-    });
-    if (!result) throw "Cet id n'existe pas dans la liste";
-    return result;
-  }
+ getById1 = (id : number):TodoModel => {
+  const resu = this.repo.getAll().find(item => item.id == id)
+  if (!resu) throw "id non trouvé"
+  return resu
+ }
+
+ getById2 = (id : number):TodoModel => {
+  const resu = this.repo.getAll().filter(item => item.id == id)[0]
+  if (!resu) throw "id non trouvé"
+  return resu
+ }
+
+ 
+
+deleteById = (id : number) =>{
+   
+    const idDeleted = this.repo.getAll().find(item => item.id == id);
+   if (!idDeleted) throw "id non trouvé"
+   return idDeleted
 }
+
+ 
+}
+
+
