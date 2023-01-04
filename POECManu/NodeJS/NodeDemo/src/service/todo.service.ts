@@ -1,3 +1,4 @@
+import { runInThisContext } from "vm";
 import TodoModel from "../model/todo.model";
 import TodoRepository from "../repository/todo.repository";
 
@@ -12,28 +13,49 @@ export default class TodoService {
     return this.repo.getAll();
   };
 
- getById1 = (id : number):TodoModel => {
-  const resu = this.repo.getAll().find(item => item.id == id)
-  if (!resu) throw "id non trouvé"
-  return resu
- }
+  getById1 = (id: number): TodoModel => {
+    const resu = this.repo.getAll().find((item) => item.id == id);
+    if (!resu) throw "Cet id n'existe pas dans la liste";
+    return resu;
+  };
 
- getById2 = (id : number):TodoModel => {
-  const resu = this.repo.getAll().filter(item => item.id == id)[0]
-  if (!resu) throw "id non trouvé"
-  return resu
- }
+  // filter renvoie toutes les occurences qui marchent avec la condition
+  getById2 = (id: number): TodoModel => {
+    const resu = this.repo.getAll().filter((item) => item.id == id)[0];
+    if (!resu) throw "id non trouvé";
+    return resu;
+  };
 
- 
+  deleteById = (id: number): void => {
+    this.repo.deleteById(id);
+  };
 
-deleteById = (id : number) =>{
-   
-    const idDeleted = this.repo.getAll().find(item => item.id == id);
-   if (!idDeleted) throw "id non trouvé"
-   return idDeleted
+  /*
+  deleteById2 = (id: number) => {
+    const index = this.getAll().findIndex((item) => item.id == id);
+    this.repo.deleteById2(index)
+  };
+  */
+
+  createTodo = (task: string): TodoModel => {
+    if (!task) throw "il manque un paramètre";
+    const newTodo = new TodoModel(task);
+    this.repo.createTodo(newTodo);
+    return newTodo;
+  };
+
+  updateTodo = (item: TodoModel, id: number):TodoModel => {
+    if (item.id != id) throw "to do incorrecte"
+    const exist = this.getAll().find((data) => data.id == item.id);
+    if (!exist) {
+      const todo = new TodoModel(item.task, item.completed);
+      this.repo.createTodo(todo);
+      return todo;
+    } else {
+      const todo = new TodoModel(item);
+      const index = this.getAll().findIndex(item => item.id == todo.id)
+      this.repo.update(todo, index);
+      return todo;
+    }
+  };
 }
-
- 
-}
-
-
