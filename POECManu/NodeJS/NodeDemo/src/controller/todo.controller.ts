@@ -1,54 +1,59 @@
-import TodoModel from "../model/todo.model";
+/* The controller is the class that manages the data coming from the outside and calls the methods of
+the service */
+import { Request, Response } from "express";
 import TodoService from "../service/todo.service";
-import { Response, Request } from "express";
+import TodoServicePersistance from "../service/todo.service.persistance";
 
+// le controller gère les datas provenants de l'exterieur et appelle les méthodes du service
 export default class TodoController {
-  service: TodoService;
+    service: TodoServicePersistance
 
-  constructor(service: TodoService) {
-    this.service = service;
-  }
+    // on appelle le service 
+    constructor(service: TodoServicePersistance) {
+        this.service = service
+    }
 
-  getAll = (req: Request, res: Response): void => {
-    res.send(this.service.getAll());
-  };
+   /* Defining a function called getAll that takes two parameters, req and res. The req parameter is of
+   type Request and the res parameter is of type Response. The function returns nothing (void). */
+    getAll = async(req: Request, res: Response): Promise<void> => {
+        const data = await this.service.getAll()
+        res.send(data)
+    }
 
-  getByID = (req: Request, res: Response): void => {
-    const id = req.params.id;
-    const data = this.service.getById1(+id);
-    res.send(data);
-  };
+    getById = async (req: Request, res: Response): Promise<void> => {
+        const id = req.params.id
+        const data = await this.service.getById(+id)
+        res.send(data)
+    }
 
-  deleteById = (req: Request, res: Response): void => {
-    const id = req.params.id;
-    this.service.deleteById(+id);
-    res.sendStatus(200);
-  };
+/* Deleting a record from the database. */
+    deleteById = (req:Request, res: Response): void => {
+        const id = req.params.id;
+        this.service.deleteById(+id)
+        .then(data => {res.sendStatus(200)})
+        .catch(err => res.send("suppression impossible"))
+    }
 
-  /**
-   * deleteById2 = (req : Request, res : Response):void => {
-   *
-   *
-   * }
-   */
+// /* Creating a new todo item. */
+//     create = (req:Request, res: Response) => {
+//         const task = req.body.task
+//         const todo = this.service.createTodo(task)
+//         res.send(todo)
+//     }
 
-  create = (req: Request, res: Response) => {
-    const task = req.body.task;
-    const todo = this.service.createTodo(task);
-    res.send(todo);
-  };
+// /* The above code is updating the todo item. */
+//     update = (req:Request, res: Response) => {
+//         const id = req.params.id
+//         const body = req.body
+//         const data = this.service.updateTodo(body, +id)
+//         res.send(data)
+//     }
 
-  /**
-   * Si l'id n'existe pas, je crée l'objet
-   * l'id dans l'url doit correspondre à l'id du boby
-   * si les id sont identiques, je modifie l'objet (on ne touche pas à l'id)
-   */
+//     patch  = (req:Request, res: Response) => {
+//         const id = req.params.id
+//         const body = req.body
+//         const data = this.service.patch(+id, body)
+//         res.send(data)
+//     }
 
-  update = (req: Request, res: Response) => {
-    const id = req.params.id;
-    const body = req.body;
-    const data = new TodoModel(req.body);
-    this.service.updateTodo(body, +id);
-    res.send(data);
-  };
 }

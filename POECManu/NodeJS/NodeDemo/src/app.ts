@@ -16,5 +16,5 @@ app.use("/todo",router);
 
 // Définition du port pour le server
 app.listen(port, () => {
-    console.log(`serveur lancé sur le port ${port}`)
+    console.log(`Le server est lancé sur le port ${port}`)
 })

@@ -1,6 +1,6 @@
-import { runInThisContext } from "vm";
-import TodoModel from "../model/todo.model";
+import { IPatch, TodoModel } from "../model/todo.model";
 import TodoRepository from "../repository/todo.repository";
+// C'est à partir du fichier Service qu'on va effectuer nos tests unitaires
 
 export default class TodoService {
   repo: TodoRepository;
@@ -44,8 +44,8 @@ export default class TodoService {
     return newTodo;
   };
 
-  updateTodo = (item: TodoModel, id: number):TodoModel => {
-    if (item.id != id) throw "to do incorrecte"
+  updateTodo = (item: TodoModel, id: number): TodoModel => {
+    if (item.id != id) throw "to do incorrecte";
     const exist = this.getAll().find((data) => data.id == item.id);
     if (!exist) {
       const todo = new TodoModel(item.task, item.completed);
@@ -53,9 +53,18 @@ export default class TodoService {
       return todo;
     } else {
       const todo = new TodoModel(item);
-      const index = this.getAll().findIndex(item => item.id == todo.id)
+      const index = this.getAll().findIndex((item) => item.id == todo.id);
       this.repo.update(todo, index);
       return todo;
     }
+  };
+
+  patch = (id: number, item: Partial<IPatch>): TodoModel => {
+    const index = this.getAll().findIndex((data) => data.id == id);
+
+    if (!index) throw "id inexistante";
+
+    const data = this.repo.patch(index, item);
+    return data;
   };
 }
