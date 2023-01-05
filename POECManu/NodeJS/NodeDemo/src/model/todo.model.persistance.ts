@@ -3,7 +3,12 @@ export default class TodoPersistance{
     task : string
     completed : boolean
 
-    constructor(task: string= ""){
+    constructor(...data:any[]){
+const [obj] = data
+for (let key in obj){
+    this[key] = obj[key]
+}
+
         this.task = task
         this.completed = false
         

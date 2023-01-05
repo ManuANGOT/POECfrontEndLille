@@ -11,7 +11,9 @@ export default class TodoRepositoryPersistance {
     }
 
     getById = async(id: number): Promise<TodoPersistance> => {
-        return axios.get(`${this.#URL}/${id}`).then(res => res.data).catch(err => "id introuvable")
+        return axios.get(`${this.#URL}/${id}`)
+        .then(res => res.data)
+        .catch(err => "id introuvable")
     }
 
     create = async(item: TodoPersistance): Promise<TodoPersistance> => {
@@ -19,7 +21,9 @@ export default class TodoRepositoryPersistance {
     }
 
     update = async(item: TodoPersistance): Promise<TodoPersistance> => {
-        return axios.put(`${this.#URL}/${item.id}`, item).then(res => res.data)
+        return axios.put(`${this.#URL}/${item.id}`, item)
+        .then(res => res.data)
+        
     }
 
     delete = (id: number): Promise<any> => {

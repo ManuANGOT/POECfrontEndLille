@@ -28,9 +28,11 @@ export default class TodoModel {
       this.completed = obj.completed
       */
       TodoModel.count++;
-    } else if (Object.keys(obj).length == 3) {
+    }
+     else if (Object.keys(obj).length == 3) {
       ({ task: this.task, completed: this.completed } = obj);
-    } else {
+    }
+     else {
       throw "erreur lors de la mise à jour";
     }
   }
