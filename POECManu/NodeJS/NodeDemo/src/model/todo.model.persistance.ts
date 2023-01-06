@@ -1,16 +1,24 @@
-export default class TodoPersistance{
-    id! : number
-    task : string
-    completed : boolean
+export default class TodoPersistance {
+  id!: number
+  [task: string]: any
+  completed!: boolean
 
-    constructor(...data:any[]){
-const [obj] = data
-for (let key in obj){
-    this[key] = obj[key]
-}
+  constructor(data?: string, completed?: boolean) {
+     if(data) this.create(data, completed)
+  }
 
-        this.task = task
-        this.completed = false
-        
-    }
+  create = (obj: string, completed: boolean = false) => {
+      this.task = obj
+      this.completed = completed
+  }
+
+  update = (obj: any) => {
+      const checkAttribut = ["task", "completed", "id"] 
+      for (let key in obj) { 
+          if(checkAttribut.includes(key)) {
+              this[key] = obj[key]
+          }    
+      }
+  }
+  
 }

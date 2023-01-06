@@ -50,16 +50,16 @@ export default class TodoController {
     const body = req.body;
     try {
       const data = await this.service.updateTodo(body, +id);
-      res.send(data)
+      res.send(data);
     } catch (err) {
       res.send(err);
     }
   };
 
-  //     patch  = (req:Request, res: Response) => {
-  //         const id = req.params.id
-  //         const body = req.body
-  //         const data = this.service.patch(+id, body)
-  //         res.send(data)
-  //     }
+  patch = async(req: Request, res: Response) => {
+    const id = req.params.id;
+    const body = req.body;
+    const data = await this.service.patchTodo(+id, body);
+    res.send(data);
+  };
 }
