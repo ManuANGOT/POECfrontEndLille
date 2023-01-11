@@ -14,6 +14,7 @@ import { BoutonMenuComponent } from './component/bouton-menu/bouton-menu.compone
 import { ListeCourseComponent } from './component/liste-course/liste-course.component';
 import { ReactiveListeCoursesComponent } from './component/reactive-liste-courses/reactive-liste-courses.component';
 import { FormBuilderListComponent } from './component/form-builder-list/form-builder-list.component';
+import { UserFormComponent } from './component/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormBuilderListComponent } from './component/form-builder-list/form-bui
     ListeCourseComponent,
     ReactiveListeCoursesComponent,
     FormBuilderListComponent,
+    UserFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
