@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './component/button/button.component';
@@ -13,6 +13,7 @@ import { BoutonGeneriqueComponent } from './component/bouton-generique/bouton-ge
 import { BoutonMenuComponent } from './component/bouton-menu/bouton-menu.component';
 import { ListeCourseComponent } from './component/liste-course/liste-course.component';
 import { ReactiveListeCoursesComponent } from './component/reactive-liste-courses/reactive-liste-courses.component';
+import { FormBuilderListComponent } from './component/form-builder-list/form-builder-list.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReactiveListeCoursesComponent } from './component/reactive-liste-course
     BoutonMenuComponent,
     ListeCourseComponent,
     ReactiveListeCoursesComponent,
+    FormBuilderListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

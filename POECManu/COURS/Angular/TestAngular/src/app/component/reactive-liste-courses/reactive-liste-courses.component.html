@@ -5,8 +5,13 @@
 <p>Total : {{ totalPrice }} €</p>
 
 <form [formGroup]="article" (ngSubmit)="addArticle()">
-  <label> Désignation : <input type="text" formControlName="designation" />
+  <label>
+    Désignation :
+    <input type="text" formControlName="designation" />
   </label>
-  <label> Prix : <input type="number" formControlName="prix" /> </label>
-  <button type="submit">Ajouter au panier</button>
+  <label>
+    Prix :
+    <input type="number" formControlName="prix" />
+  </label>
+  <button type="submit" [disabled]="!article.valid">Ajouter au panier</button>
 </form>
