@@ -1,0 +1,11 @@
+import Router from "./components/router/router";
+
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      <Router />
+    </div>
+  );
+};
+
+export default App;

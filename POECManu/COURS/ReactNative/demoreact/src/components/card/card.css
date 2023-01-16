@@ -1,0 +1,26 @@
+.card {
+    float: left;
+    padding: 10px;
+    border: solid 5px black;
+    margin: 10px;
+    border-radius: 30px;
+    background: darkgray;
+  }
+  
+  .card h1 {
+    font-size: 32px;
+    text-align: center;
+    color: white;
+  }
+  .card img {
+    object-fit: cover;
+    width: 250px;
+    height: auto;
+  }
+  
+  .card .infos p {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding: 2px;
+  }
