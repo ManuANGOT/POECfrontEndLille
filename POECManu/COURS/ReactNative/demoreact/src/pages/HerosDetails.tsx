@@ -1,36 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SuperHero from "../models/SuperHero";
-import SuperHeros from "../data/SuperHeros";
 
-const HerosDetails: React.FC = () => {
-  const [herosDetails, setHerosDetails] = useState<SuperHero>();
 
+
+const HerosDetails2: React.FC = () => {
+  const [afficher, setAfficher] = useState<SuperHero>();
   const { id } = useParams<string>();
 
   useEffect(() => {
-    if (id) {
-      SuperHeros.forEach((hero) => {
-        if (hero.id === +id) {
-          setHerosDetails(hero);
-        }
-      });
-    }
+    fetch(`http://localhost:3004/superHeros/${id}`)
+      .then((response) => response.json())
+      .then((data) => setAfficher(data));
   }, [id]);
-
   return (
     <>
       <div className="card">
-        <h2>Name : {herosDetails?.name}</h2>
-        <img src={herosDetails?.image} alt={herosDetails?.name} />
+        <h1>{afficher?.name}</h1>
+        <img src={afficher?.image} alt={afficher?.name} />
+       
         <div className="infos">
-          <p>Age : {herosDetails?.age}</p>
-          <p>Secret name : {herosDetails?.civil}</p>
-          <p>City : {herosDetails?.ville}</p>
+          <p>{afficher?.civil}</p>
+          <p>{afficher?.age}</p>
+          <p>{afficher?.ville}</p>
         </div>
       </div>
     </>
   );
 };
-
-export default HerosDetails;
+export default HerosDetails2;

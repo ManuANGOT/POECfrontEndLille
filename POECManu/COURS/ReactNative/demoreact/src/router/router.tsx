@@ -4,6 +4,7 @@ import HerosList from "../pages/HeroList";
 import Forms from "../components/form/form";
 import Get from "../components/Fetch/get";
 import GetID from "../components/Fetch/getId";
+import HerosEdit from "../pages/herosEdit";
 
 const Router: React.FC = () => {
   const routes: RouteObject[] = [
@@ -27,7 +28,12 @@ const Router: React.FC = () => {
       path: "/fetch/:id",
       element: <GetID />,
     },
-    { path: "3004/fetch/", element: <HerosList /> },
+
+    
+    {
+      path: "/edit/:id",
+      element: <HerosEdit />,
+    },
   ];
   return <>{useRoutes(routes)}</>;
 };
