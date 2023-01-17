@@ -1,6 +1,7 @@
 import { RouteObject, useRoutes } from "react-router";
-import Count from "../count/Count";
+import HerosDetails from "../pages/HerosDetails";
 import HerosList from "../pages/HeroList";
+import Forms from "../form/form";
 
 const Router: React.FC = () => {
   const routes: RouteObject[] = [
@@ -9,10 +10,15 @@ const Router: React.FC = () => {
       element: <HerosList />,
     },
     {
-      path: "/count",
-      element: <Count />,
+      path: "/:id",
+      element: <HerosDetails />,
+    },
+    {
+      path: "/form",
+      element: <Forms />,
     },
   ];
   return <>{useRoutes(routes)}</>;
 };
+
 export default Router;

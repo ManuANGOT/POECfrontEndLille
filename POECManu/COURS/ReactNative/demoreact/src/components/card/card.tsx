@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 import SuperHero from "../models/SuperHero";
 import "./card.css";
 
@@ -7,7 +9,10 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ superHero }) => {
   return (
+    <Link to={`/${superHero.id}`}>
     <div className="card">
+
+     
       <h1>{superHero.name}</h1>
       <img src={superHero.image} alt="super héros"></img>
       <div className="infos">
@@ -16,6 +21,7 @@ const Card: React.FC<CardProps> = ({ superHero }) => {
         <p>Habite à : {superHero.ville || "inconnu"}</p>
       </div>
     </div>
+    </Link>
   );
 };
 export default Card;
