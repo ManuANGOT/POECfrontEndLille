@@ -1,4 +1,4 @@
-import Router from "./components/router/router";
+import Router from "./router/router";
 import Header from "./components/header/header";
 
 const App: React.FC = () => {

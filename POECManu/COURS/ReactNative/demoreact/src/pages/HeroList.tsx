@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import Card from "../card/card";
+import { Link } from "react-router-dom";
+import Card from "../components/card/card";
 import SuperHeros from "../data/SuperHeros";
 import SuperHero from "../models/SuperHero";
 
 const HerosList = () => {
   const [afficher, setAfficher] = useState<SuperHero[]>([]);
 
-  useEffect(() => setAfficher(SuperHeros), []);
+  useEffect(() => {
+    setAfficher(SuperHeros);
+  }, []);
 
   return (
     <>

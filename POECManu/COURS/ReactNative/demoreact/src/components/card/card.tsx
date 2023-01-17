@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import SuperHero from "../models/SuperHero";
+import SuperHero from "../../models/SuperHero";
 import "./card.css";
 
 type CardProps = {
