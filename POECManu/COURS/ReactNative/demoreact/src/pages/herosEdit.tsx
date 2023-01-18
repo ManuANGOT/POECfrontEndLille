@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import HerosForm from "../components/HerosForm/herosForm";
+import { useEffect, useState } from "react";
 import SuperHero from "../models/SuperHero";
+import HerosForm from "../components/HerosForm/herosForm";
 
 const HerosEdit: React.FC = () => {
   const [hero, setHero] = useState<SuperHero>();
@@ -17,8 +17,8 @@ const HerosEdit: React.FC = () => {
     <main>
       {hero?.id ? (
         <>
-          <h2> Editer : {hero?.name}</h2>
-          <HerosForm hero={hero}></HerosForm>
+          <h2>Editer: {hero.name}:</h2>
+          <HerosForm hero={hero} edit={true}></HerosForm>
         </>
       ) : (
         <h2>Ce héros n'existe pas</h2>

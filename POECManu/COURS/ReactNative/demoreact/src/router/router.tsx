@@ -5,6 +5,9 @@ import Forms from "../components/form/form";
 import Get from "../components/Fetch/get";
 import GetID from "../components/Fetch/getId";
 import HerosEdit from "../pages/herosEdit";
+import HerosCreate from "../pages/ajoutHeros";
+
+import HerosAjout from "../pages/ajoutHeros";
 
 const Router: React.FC = () => {
   const routes: RouteObject[] = [
@@ -28,11 +31,16 @@ const Router: React.FC = () => {
       path: "/fetch/:id",
       element: <GetID />,
     },
-
     
     {
       path: "/edit/:id",
       element: <HerosEdit />,
+    },
+    
+    
+    {
+      path: "/create",
+      element: <HerosCreate />,
     },
   ];
   return <>{useRoutes(routes)}</>;

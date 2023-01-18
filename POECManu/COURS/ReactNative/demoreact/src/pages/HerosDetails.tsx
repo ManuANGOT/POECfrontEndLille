@@ -1,31 +1,41 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SuperHero from "../models/SuperHero";
+import "../components/card/card.css";
+import { FiEdit } from "react-icons/fi";
+import HeroService from "../services/herosService";
 
-
-
-const HerosDetails2: React.FC = () => {
+const HerosDetails: React.FC = () => {
   const [afficher, setAfficher] = useState<SuperHero>();
   const { id } = useParams<string>();
 
   useEffect(() => {
-    fetch(`http://localhost:3004/superHeros/${id}`)
-      .then((response) => response.json())
-      .then((data) => setAfficher(data));
+    if (id) {
+      HeroService.getHerosById(+id).then((hero) => setAfficher(hero));
+    }
   }, [id]);
+
   return (
     <>
-      <div className="card">
-        <h1>{afficher?.name}</h1>
-        <img src={afficher?.image} alt={afficher?.name} />
-       
-        <div className="infos">
-          <p>{afficher?.civil}</p>
-          <p>{afficher?.age}</p>
-          <p>{afficher?.ville}</p>
-        </div>
-      </div>
+      {afficher?.id ? (
+        <>
+          <div className="card">
+            <h1>{afficher?.name}</h1>
+            <img src={afficher?.image} alt={afficher?.name} />
+            <Link to={`/edit/${id}`}>
+              <FiEdit />
+            </Link>
+            <div className="infos">
+              <p>{afficher?.civil}</p>
+              <p>{afficher?.age}</p>
+              <p>{afficher?.ville}</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <h1>Ce héros n'existe pas</h1>
+      )}
     </>
   );
 };
-export default HerosDetails2;
+export default HerosDetails;
